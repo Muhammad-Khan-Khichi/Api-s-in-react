@@ -8,7 +8,7 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
- base: "/Api-s-in-react/",
+ base: "/Image-Search-app-in-React/",
 })
 
 
