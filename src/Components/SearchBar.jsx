@@ -7,17 +7,15 @@ function SearchBar({ onSubmit }) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    if (!term.trim()) return; // don't submit empty search
-
+    if (!term.trim()) return;
     setIsLoading(true);
-    await onSubmit(term); // wait for results from parent
+    await onSubmit(term);
     setIsLoading(false);
   };
 
-  const handleChange = (e) => {
-    setTerm(e.target.value);
-  };
+  const handleChange = (e) => setTerm(e.target.value);
+
+  console.log(term); // check if typing works
 
   return (
     <div className="w-full max-w-lg mx-auto mt-10">
@@ -26,20 +24,17 @@ function SearchBar({ onSubmit }) {
         className="flex items-center bg-white rounded-full shadow-md border border-gray-200 overflow-hidden 
                focus-within:ring-2 focus-within:ring-indigo-400 transition"
       >
-        {/* Search Icon */}
         <span className="pl-4 text-gray-400">
           <IoMdSearch />
         </span>
 
-        {/* Input */}
         <input
           value={term}
           onChange={handleChange}
           placeholder="Search for stunning images..."
-          className="flex-1 px-4 py-2 text-gray-700 placeholder-gray-400 bg-transparent focus:outline-none"
+          className="flex-1 px-4 py-2 text-black placeholder-gray-400 bg-transparent focus:outline-none"
         />
 
-        {/* Button */}
         <button
           type="submit"
           disabled={isLoading || !term.trim()}
