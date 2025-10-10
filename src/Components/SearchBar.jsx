@@ -28,12 +28,13 @@ function SearchBar({ onSubmit }) {
           <IoMdSearch />
         </span>
 
-        <input
-          value={term}
-          onChange={handleChange}
-          placeholder="Search for stunning images..."
-          className="flex-1 px-4 py-2 text-black placeholder-gray-400 bg-transparent focus:outline-none"
-        />
+      <input
+  value={term}
+  onChange={handleChange}
+  placeholder="Search for stunning images..."
+  className="flex-1 px-4 py-2 text-black bg-white focus:outline-none"
+/>
+
 
         <button
           type="submit"
